@@ -18,13 +18,23 @@ import { IRequestUser } from '../users/user.structures';
 import { IPaginatedList } from '../app.structures';
 import { ListExpensesDTO } from './dtos/list-expenses.dto';
 import { UuidParamDTO } from '../app.validators';
+import { ApiTags } from '@nestjs/swagger';
+import {
+  CreateExpenseDocs,
+  DeleteExpenseDocs,
+  GetExpenseDocs,
+  ListExpensesDocs,
+  UpdateExpenseDocs,
+} from './expenses.docs';
 
 @Controller('expenses')
+@ApiTags('Expenses')
 @UseGuards(UsersGuard)
 export class ExpensesController {
   constructor(private expensesService: ExpensesService) {}
 
   @Get()
+  @ListExpensesDocs()
   find(
     @Req() { user }: IRequestUser,
     @Query() filters: ListExpensesDTO,
@@ -36,6 +46,7 @@ export class ExpensesController {
   }
 
   @Get('/:id')
+  @GetExpenseDocs()
   findById(
     @Req() { user }: IRequestUser,
     @Param() { id: expenseId }: UuidParamDTO,
@@ -44,6 +55,7 @@ export class ExpensesController {
   }
 
   @Post()
+  @CreateExpenseDocs()
   create(
     @Req() { user }: IRequestUser,
     @Body() data: CreateExpenseDTO,
@@ -55,6 +67,7 @@ export class ExpensesController {
   }
 
   @Patch('/:id')
+  @UpdateExpenseDocs()
   update(
     @Req() { user }: IRequestUser,
     @Param() { id: expenseId }: UuidParamDTO,
@@ -67,6 +80,7 @@ export class ExpensesController {
   }
 
   @Delete('/:id')
+  @DeleteExpenseDocs()
   delete(
     @Req() { user }: IRequestUser,
     @Param() { id: expenseId }: UuidParamDTO,
