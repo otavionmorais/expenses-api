@@ -2,21 +2,15 @@
 
 REST API to manage users expenses.
 
-<br/>
-
 ## Technologies
 
 - Node.js (v18)
 - NestJS (v10)
 - PostgreSQL (v15)
 
-<br/>
-
 ## Documentation
 
 The API documentation (Swagger) is available at `/docs` route.
-
-<br/>
 
 ## Running the project
 
@@ -68,8 +62,6 @@ docker run -d \
     -e AWS_SECRET_ACCESS_KEY='your_secret_access_key' \
  -p 3000:3000 expenses-api
 ```
-
-<br/>
 
 ## Utils
 
