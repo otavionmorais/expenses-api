@@ -2,6 +2,22 @@
 
 REST API to manage users expenses.
 
+<br/>
+
+## Technologies
+
+- Node.js (v18)
+- NestJS (v10)
+- PostgreSQL (v15)
+
+<br/>
+
+## Documentation
+
+The API documentation (Swagger) is available at `/docs` route.
+
+<br/>
+
 ## Running the project
 
 ### - **Without docker**
@@ -53,7 +69,9 @@ docker run -d \
  -p 3000:3000 expenses-api
 ```
 
-### Utils
+<br/>
+
+## Utils
 
 #### - Running the migrations
 
