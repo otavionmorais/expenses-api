@@ -34,7 +34,7 @@ npm run migrations:execute
 And finally, you can run the project:
 
 ```sh
-npm run start
+npm run start:dev
 ```
 
 That's it! The project will be running on `localhost:${PORT}`.  
